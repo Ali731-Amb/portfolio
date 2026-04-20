@@ -176,3 +176,93 @@ nav ul a:hover {
   color: var(--terre);
   border-color: var(--terre);
 }
+
+/* ---- SECTION PROJETS ---- */
+
+#projets {
+  padding: 100px 60px;
+  background-color: var(--creme-fonce);
+}
+
+.section-label {
+  display: block;
+  font-size: 0.72rem;
+  letter-spacing: 0.2em;
+  color: var(--terre);
+  margin-bottom: 12px;
+}
+
+#projets h2 {
+  font-family: var(--serif);
+  font-size: 2.4rem;
+  color: var(--noir);
+  margin-bottom: 48px;
+}
+
+.projets-grille {
+  display: grid;
+  /* 2 colonnes égales, s'adaptent à la largeur */
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.projet-carte {
+  background-color: var(--creme);
+  border: 1px solid var(--beige-bord);
+  padding: 28px;
+  border-radius: 4px;
+  /* position relative nécessaire pour le badge "En cours" */
+  position: relative;
+  transition: border-color 0.2s;
+}
+
+.projet-carte:hover {
+  border-color: var(--terre);
+}
+
+.projet-num {
+  font-size: 0.72rem;
+  color: var(--brun);
+  letter-spacing: 0.1em;
+  display: block;
+  margin-bottom: 12px;
+}
+
+.projet-carte h3 {
+  font-family: var(--serif);
+  font-size: 1.2rem;
+  color: var(--noir);
+  margin-bottom: 10px;
+}
+
+.projet-carte p {
+  font-size: 0.88rem;
+  color: var(--gris);
+  line-height: 1.7;
+  margin-bottom: 16px;
+}
+
+.projet-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.projet-tags span {
+  font-size: 0.72rem;
+  padding: 3px 10px;
+  border: 1px solid var(--beige-bord);
+  color: var(--brun);
+  border-radius: 20px;
+}
+
+.badge-wip {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 0.68rem;
+  background-color: var(--terre-clair);
+  color: var(--terre);
+  padding: 3px 10px;
+  border-radius: 20px;
+}
