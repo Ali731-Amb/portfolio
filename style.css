@@ -1,76 +1,52 @@
 /* ===========================
    RESET
-   Supprime les marges et
-   paddings par défaut du
-   navigateur sur tous les
-   éléments
 =========================== */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  /* border-box : la largeur inclut
-     le padding et la bordure,
-     plus facile à calculer */
 }
-
 
 /* ===========================
    VARIABLES GLOBALES
 =========================== */
 :root {
+  --creme:        #FBF7F4;
+  --creme-fonce:  #F5EFE9;
+  --beige-bord:   #EDE6DF;
+  --terre:        #C4826A;
+  --terre-clair:  #F2E4DC;
+  --brun:         #A08880;
+  --noir:         #2D2420;
+  --texte:        #4A3C38;
+  --gris:         #A08880;
 
-  /* --- Couleurs --- */
-  --creme:        #FBF7F4; /* fond principal de la page */
-  --creme-fonce:  #F5EFE9; /* fond des sections alternées */
-  --beige-bord:   #EDE6DF; /* couleur des bordures et séparateurs */
-  --terre:        #C4826A; /* couleur accent principale (terracotta) */
-  --terre-clair:  #F2E4DC; /* version très claire du terracotta,
-                               pour les badges et tags */
-  --brun:         #A08880; /* texte secondaire, sous-titres */
-  --noir:         #2D2420; /* titres et textes importants */
-  --texte:        #4A3C38; /* texte courant du corps de page */
-  --gris:         #A08880; /* texte discret, labels */
-
-  /* --- Polices --- */
   --serif: 'Playfair Display', Georgia, serif;
-  /* Playfair Display : élégante, pour les grands titres.
-     Georgia et serif sont des fallbacks si Google Fonts
-     ne charge pas */
-
   --sans:  'DM Sans', sans-serif;
-  /* DM Sans : moderne et lisible, pour tout le reste */
 }
-
 
 /* ===========================
    BASE DU BODY
 =========================== */
 body {
-  background-color: var(--creme); /* fond crème sur toute la page */
-  color: var(--texte);            /* couleur de texte par défaut */
-  font-family: var(--sans);       /* police par défaut : DM Sans */
+  background-color: var(--creme);
+  color: var(--texte);
+  font-family: var(--sans);
 }
 
 /* ---- NAVBAR ---- */
 
 nav {
-  /* Fixe la barre en haut, elle reste visible quand on scroll */
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-
-  /* Mise en page horizontal */
   display: flex;
   justify-content: space-between;
   align-items: center;
-
   padding: 20px 60px;
   background-color: var(--creme);
   border-bottom: 1px solid var(--beige-bord);
-
-  /* Reste au-dessus du reste de la page */
   z-index: 100;
 }
 
@@ -83,7 +59,7 @@ nav .nav-logo {
 nav ul {
   display: flex;
   gap: 32px;
-  list-style: none; /* supprime les puces */
+  list-style: none;
 }
 
 nav ul a {
@@ -91,22 +67,20 @@ nav ul a {
   font-size: 0.85rem;
   color: var(--gris);
   letter-spacing: 0.06em;
-  transition: color 0.2s; /* animation douce au survol */
+  transition: color 0.2s;
 }
 
 nav ul a:hover {
-  color: var(--terre); /* devient terracotta au survol */
+  color: var(--terre);
 }
 
 /* ---- HERO ---- */
 
 #hero {
-  /* deux colonnes égales côte à côte */
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: center;
   gap: 60px;
-
   padding: 160px 60px 100px;
   background-color: var(--creme);
 }
@@ -120,7 +94,6 @@ nav ul a:hover {
 }
 
 .hero-gauche h1 em {
-  /* le nom de famille passe à la ligne en italique terracotta */
   display: block;
   font-style: italic;
   color: var(--terre);
@@ -208,7 +181,6 @@ nav ul a:hover {
   overflow: hidden;
 }
 
-/* texte fantôme en arrière-plan */
 #projets::before {
   content: 'PROJETS';
   position: absolute;
@@ -238,18 +210,16 @@ nav ul a:hover {
 .projets-liste {
   display: flex;
   flex-direction: column;
-  gap: 0;
 }
 
 .projet-row {
   display: grid;
-  /* numéro | titre | tags */
   grid-template-columns: 40px 1fr auto;
   align-items: center;
   gap: 20px;
   padding: 20px 0;
   border-bottom: 1px solid rgba(255,255,255,.06);
-  transition: background-color 0.2s;
+  transition: background-color 0.2s, padding-left 0.2s;
   cursor: default;
 }
 
@@ -293,10 +263,6 @@ nav ul a:hover {
 
 .projet-row:hover .projet-desc {
   color: rgba(255,255,255,.5);
-}
-
-.projet-row:hover .projet-titre {
-  color: var(--terre);
 }
 
 .projet-stack {
@@ -346,7 +312,6 @@ nav ul a:hover {
   grid-template-columns: repeat(3, 1fr);
   gap: 16px;
   max-width: 700px;
-  /* centre la grille dans la section */
   margin: 0 auto;
 }
 
@@ -377,14 +342,12 @@ nav ul a:hover {
   align-items: center;
   justify-content: center;
   margin-bottom: 4px;
-  /* force le fond terracotta à être visible */
   flex-shrink: 0;
 }
 
 .contact-icone svg {
   width: 16px;
   height: 16px;
-  /* force le trait blanc sur l'icône */
   stroke: #ffffff !important;
   fill: none !important;
   display: block;
@@ -401,4 +364,14 @@ nav ul a:hover {
   color: var(--noir);
   text-align: center;
   line-height: 1.4;
+}
+
+/* ---- SECTION LABEL GLOBAL ---- */
+
+.section-label {
+  display: block;
+  font-size: 0.72rem;
+  letter-spacing: 0.2em;
+  color: var(--terre);
+  margin-bottom: 12px;
 }
