@@ -101,44 +101,54 @@ nav ul a:hover {
 /* ---- HERO ---- */
 
 #hero {
-  /* padding-top grand pour ne pas être caché sous la navbar fixe */
+  /* deux colonnes égales côte à côte */
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 60px;
+
   padding: 160px 60px 100px;
   background-color: var(--creme);
 }
 
-.hero-tag {
-  display: inline-block;
-  font-size: 0.75rem;
-  letter-spacing: 0.15em;
-  color: var(--brun);
-  background-color: var(--terre-clair);
-  padding: 5px 12px;
-  border-radius: 20px;
-  margin-bottom: 24px;
-}
-
-#hero h1 {
+.hero-gauche h1 {
   font-family: var(--serif);
   font-size: 5rem;
   color: var(--noir);
-  line-height: 1.1;
-  margin-bottom: 24px;
+  font-weight: 400;
+  line-height: 1.05;
 }
 
-#hero h1 em {
+.hero-gauche h1 em {
+  /* le nom de famille passe à la ligne en italique terracotta */
+  display: block;
+  font-style: italic;
   color: var(--terre);
-  font-style: normal;
+  font-size: 5.5rem;
 }
 
-#hero p {
-  font-size: 1.05rem;
+.hero-droite {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.hero-tag {
+  font-size: 0.72rem;
+  letter-spacing: 0.15em;
+  color: var(--terre);
+  border-left: 2px solid var(--terre);
+  padding-left: 10px;
+}
+
+.hero-droite p {
+  font-size: 1rem;
   color: var(--gris);
   line-height: 1.8;
-  max-width: 480px;
-  margin-bottom: 36px;
+  max-width: 380px;
 }
 
-#hero strong {
+.hero-droite strong {
   color: var(--noir);
   font-weight: 500;
 }
