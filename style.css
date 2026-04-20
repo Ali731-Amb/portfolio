@@ -266,3 +266,58 @@ nav ul a:hover {
   padding: 3px 10px;
   border-radius: 20px;
 }
+
+/* ---- SECTION CONTACT ---- */
+
+#contact {
+  padding: 100px 60px;
+  background-color: var(--creme);
+}
+
+#contact h2 {
+  font-family: var(--serif);
+  font-size: 2.4rem;
+  color: var(--noir);
+  margin-bottom: 16px;
+}
+
+#contact p {
+  font-size: 1rem;
+  color: var(--gris);
+  line-height: 1.8;
+  margin-bottom: 48px;
+}
+
+.contact-liens {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-width: 520px;
+}
+
+.contact-carte {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 24px;
+  border: 1px solid var(--beige-bord);
+  border-radius: 4px;
+  text-decoration: none;
+  transition: border-color 0.2s, background-color 0.2s;
+}
+
+.contact-carte:hover {
+  border-color: var(--terre);
+  background-color: var(--terre-clair);
+}
+
+.contact-label {
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  color: var(--brun);
+}
+
+.contact-valeur {
+  font-size: 0.88rem;
+  color: var(--noir);
+}
