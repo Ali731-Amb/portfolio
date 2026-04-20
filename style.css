@@ -335,11 +335,17 @@ nav ul a:hover {
   align-items: center;
   justify-content: center;
   margin-bottom: 4px;
+  /* force le fond terracotta à être visible */
+  flex-shrink: 0;
 }
 
 .contact-icone svg {
   width: 16px;
   height: 16px;
+  /* force le trait blanc sur l'icône */
+  stroke: #ffffff !important;
+  fill: none !important;
+  display: block;
 }
 
 .contact-label {
