@@ -3,109 +3,114 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- Rend la page responsive -->
-
   <title>Alison Amblard — Developement Web Student</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <!-- Prépare la connexion à Google Fonts pour charger plus vite -->
-
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
-  <!-- Charge les deux polices : Playfair Display (serif, pour les titres)
-       et DM Sans (sans-serif, pour le texte courant) -->
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+
   <nav>
-  <span class="nav-logo">Alison Amblard</span>
-  <ul>
-    <li><a href="#hero">Accueil</a></li>
-    <li><a href="#projets">Projets</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ul>
-</nav>
+    <span class="nav-logo">Alison Amblard</span>
+    <ul>
+      <li><a href="#hero">Accueil</a></li>
+      <li><a href="#projets">Projets</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
   <section id="hero">
-  <span class="hero-tag">Holberton School · Développement Web</span>
-  <h1>Alison<br><em>Amblard.</em></h1>
-  <p>Étudiante développeuse, je code depuis octobre 2024.<br>
-  Je cherche une <strong>alternance en cybersécurité</strong>.</p>
-  <div class="hero-btns">
-    <a href="#projets" class="btn-principal">Voir mes projets</a>
-    <a href="#contact" class="btn-secondaire">Me contacter</a>
-  </div>
-<section id="projets">
-  <span class="section-label">Projets</span>
-  <h2>Ce que j'ai construit.</h2>
-  <div class="projets-grille">
-    <div class="projet-carte">
-      <span class="projet-num">01</span>
-      <h3>Printf</h3>
-      <p>Réimplémentation de printf depuis zéro — gestion des formats, va_list et cas limites.</p>
-      <div class="projet-tags">
-        <span>C</span>
-        <span>Libc</span>
-        <span>Mémoire</span>
-      </div>
+    <span class="hero-tag">Holberton School · Développement Web</span>
+    <h1>Alison<br><em>Amblard.</em></h1>
+    <p>Étudiante développeuse, je code depuis octobre 2024.<br>
+    Je cherche une <strong>alternance en cybersécurité</strong>.</p>
+    <div class="hero-btns">
+      <a href="#projets" class="btn-principal">Voir mes projets</a>
+      <a href="#contact" class="btn-secondaire">Me contacter</a>
     </div>
+  </section>
 
-    <div class="projet-carte">
-      <span class="projet-num">02</span>
-      <h3>Simple Shell</h3>
-      <p>Création d'un shell UNIX interactif — parsing de commandes, fork, exec et gestion des signaux.</p>
-      <div class="projet-tags">
-        <span>C</span>
-        <span>POSIX</span>
-        <span>Processus</span>
+  <section id="projets">
+    <span class="section-label">Projets</span>
+    <h2>Ce que j'ai construit.</h2>
+    <div class="projets-grille">
+
+      <div class="projet-carte">
+        <span class="projet-num">01</span>
+        <h3>Printf</h3>
+        <p>Réimplémentation de printf depuis zéro — gestion des formats, va_list et cas limites.</p>
+        <div class="projet-tags">
+          <span>C</span>
+          <span>Libc</span>
+          <span>Mémoire</span>
+        </div>
       </div>
-    </div>
 
-    <div class="projet-carte">
-      <span class="projet-num">03</span>
-      <h3>AirBnB Clone (HBNB)</h3>
-      <p>Application web complète développée seule — back-end, front-end et base de données.</p>
-      <div class="projet-tags">
-        <span>Python</span>
-        <span>Flask</span>
-        <span>SQL</span>
+      <div class="projet-carte">
+        <span class="projet-num">02</span>
+        <h3>Simple Shell</h3>
+        <p>Création d'un shell UNIX interactif — parsing de commandes, fork, exec et gestion des signaux.</p>
+        <div class="projet-tags">
+          <span>C</span>
+          <span>POSIX</span>
+          <span>Processus</span>
+        </div>
       </div>
-    </div>
 
-    <div class="projet-carte en-cours">
-      <span class="projet-num">04</span>
-      <span class="badge-wip">En cours</span>
-      <h3>Rapports de vulnérabilités</h3>
-      <p>Analyse de sécurité d'applications via programmes publics — documentation des failles selon OWASP.</p>
-      <div class="projet-tags">
-        <span>AppSec</span>
-        <span>OWASP</span>
+      <div class="projet-carte">
+        <span class="projet-num">03</span>
+        <h3>AirBnB Clone (HBNB)</h3>
+        <p>Application web complète développée seule — back-end, front-end et base de données.</p>
+        <div class="projet-tags">
+          <span>Python</span>
+          <span>Flask</span>
+          <span>SQL</span>
+        </div>
       </div>
-    </div>
 
-  </div>
-</section>
+      <div class="projet-carte en-cours">
+        <span class="projet-num">04</span>
+        <span class="badge-wip">En cours</span>
+        <h3>Rapports de vulnérabilités</h3>
+        <p>Analyse de sécurité d'applications via programmes publics — documentation des failles selon OWASP.</p>
+        <div class="projet-tags">
+          <span>AppSec</span>
+          <span>OWASP</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
   <section id="contact">
-  <span class="section-label">Contact</span>
-  <h2>Travaillons ensemble.</h2>
-  <p>Ouverte à une alternance en cybersécurité.<br>N'hésitez pas à me contacter !</p>
-  <div class="contact-grille">
-    <a href="mailto:alison.amblard.pro@gmail.com" class="contact-carte">
-      <div class="contact-icone">✉</div>
-      <span class="contact-label">Email</span>
-      <span class="contact-valeur">alison.amblard.pro@gmail.com</span>
-    </a>
-    <a href="https://github.com/Ali731-Amb" target="_blank" class="contact-carte">
-      <div class="contact-icone">⌥</div>
-      <span class="contact-label">GitHub</span>
-      <span class="contact-valeur">github.com/Ali731-Amb</span>
-    </a>
-    <a href="https://www.linkedin.com/in/alison-amblard" target="_blank" class="contact-carte">
-      <div class="contact-icone">◈</div>
-      <span class="contact-label">LinkedIn</span>
-      <span class="contact-valeur">linkedin.com/in/alison-amblard</span>
-    </a>
-  </div>
-</section>
+    <span class="section-label">Contact</span>
+    <h2>Travaillons ensemble.</h2>
+    <p>Ouverte à une alternance en cybersécurité.<br>N'hésitez pas à me contacter !</p>
+
+    <div class="contact-grille">
+
+      <a href="mailto:alison.amblard.pro@gmail.com" class="contact-carte">
+        <div class="contact-icone">✉</div>
+        <span class="contact-label">Email</span>
+        <span class="contact-valeur">alison.amblard.pro@gmail.com</span>
+      </a>
+
+      <a href="https://github.com/Ali731-Amb" target="_blank" class="contact-carte">
+        <div class="contact-icone">⌥</div>
+        <span class="contact-label">GitHub</span>
+        <span class="contact-valeur">github.com/Ali731-Amb</span>
+      </a>
+
+      <a href="https://www.linkedin.com/in/alison-amblard" target="_blank" class="contact-carte">
+        <div class="contact-icone">◈</div>
+        <span class="contact-label">LinkedIn</span>
+        <span class="contact-valeur">linkedin.com/in/alison-amblard</span>
+      </a>
+
+    </div>
+  </section>
+
   <script src="script.js"></script>
-  <!-- Relie fichier JS -->
 </body>
 </html>
