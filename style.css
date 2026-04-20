@@ -51,3 +51,49 @@ body {
   color: var(--texte);            /* couleur de texte par défaut */
   font-family: var(--sans);       /* police par défaut : DM Sans */
 }
+
+/* ---- NAVBAR ---- */
+
+nav {
+  /* Fixe la barre en haut, elle reste visible quand on scroll */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+
+  /* Mise en page horizontal */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 20px 60px;
+  background-color: var(--creme);
+  border-bottom: 1px solid var(--beige-bord);
+
+  /* Reste au-dessus du reste de la page */
+  z-index: 100;
+}
+
+nav .nav-logo {
+  font-family: var(--serif);
+  font-size: 1.1rem;
+  color: var(--noir);
+}
+
+nav ul {
+  display: flex;
+  gap: 32px;
+  list-style: none; /* supprime les puces */
+}
+
+nav ul a {
+  text-decoration: none;
+  font-size: 0.85rem;
+  color: var(--gris);
+  letter-spacing: 0.06em;
+  transition: color 0.2s; /* animation douce au survol */
+}
+
+nav ul a:hover {
+  color: var(--terre); /* devient terracotta au survol */
+}
