@@ -1,26 +1,53 @@
+/* ===========================
+   RESET
+   Supprime les marges et
+   paddings par défaut du
+   navigateur sur tous les
+   éléments
+=========================== */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  /* border-box : la largeur inclut
+     le padding et la bordure,
+     plus facile à calculer */
 }
 
+
+/* ===========================
+   VARIABLES GLOBALES
+=========================== */
 :root {
-  --creme:        #FBF7F4;
-  --creme-fonce:  #F5EFE9;
-  --beige-bord:   #EDE6DF;
-  --terre:        #C4826A;
-  --terre-clair:  #F2E4DC;
-  --brun:         #A08880;
-  --noir:         #2D2420;
-  --texte:        #4A3C38;
-  --gris:         #A08880;
 
+  /* --- Couleurs --- */
+  --creme:        #FBF7F4; /* fond principal de la page */
+  --creme-fonce:  #F5EFE9; /* fond des sections alternées */
+  --beige-bord:   #EDE6DF; /* couleur des bordures et séparateurs */
+  --terre:        #C4826A; /* couleur accent principale (terracotta) */
+  --terre-clair:  #F2E4DC; /* version très claire du terracotta,
+                               pour les badges et tags */
+  --brun:         #A08880; /* texte secondaire, sous-titres */
+  --noir:         #2D2420; /* titres et textes importants */
+  --texte:        #4A3C38; /* texte courant du corps de page */
+  --gris:         #A08880; /* texte discret, labels */
+
+  /* --- Polices --- */
   --serif: 'Playfair Display', Georgia, serif;
+  /* Playfair Display : élégante, pour les grands titres.
+     Georgia et serif sont des fallbacks si Google Fonts
+     ne charge pas */
+
   --sans:  'DM Sans', sans-serif;
+  /* DM Sans : moderne et lisible, pour tout le reste */
 }
 
+
+/* ===========================
+   BASE DU BODY
+=========================== */
 body {
-  background-color: var(--creme);
-  color: var(--texte);
-  font-family: var(--sans);
+  background-color: var(--creme); /* fond crème sur toute la page */
+  color: var(--texte);            /* couleur de texte par défaut */
+  font-family: var(--sans);       /* police par défaut : DM Sans */
 }
