@@ -97,3 +97,82 @@ nav ul a {
 nav ul a:hover {
   color: var(--terre); /* devient terracotta au survol */
 }
+
+/* ---- HERO ---- */
+
+#hero {
+  /* padding-top grand pour ne pas être caché sous la navbar fixe */
+  padding: 160px 60px 100px;
+  background-color: var(--creme);
+}
+
+.hero-tag {
+  display: inline-block;
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  color: var(--brun);
+  background-color: var(--terre-clair);
+  padding: 5px 12px;
+  border-radius: 20px;
+  margin-bottom: 24px;
+}
+
+#hero h1 {
+  font-family: var(--serif);
+  font-size: 5rem;
+  color: var(--noir);
+  line-height: 1.1;
+  margin-bottom: 24px;
+}
+
+#hero h1 em {
+  color: var(--terre);
+  font-style: normal;
+}
+
+#hero p {
+  font-size: 1.05rem;
+  color: var(--gris);
+  line-height: 1.8;
+  max-width: 480px;
+  margin-bottom: 36px;
+}
+
+#hero strong {
+  color: var(--noir);
+  font-weight: 500;
+}
+
+.hero-btns {
+  display: flex;
+  gap: 16px;
+}
+
+.btn-principal {
+  background-color: var(--noir);
+  color: var(--creme);
+  text-decoration: none;
+  font-size: 0.85rem;
+  padding: 12px 24px;
+  letter-spacing: 0.06em;
+  transition: background-color 0.2s;
+}
+
+.btn-principal:hover {
+  background-color: var(--terre);
+}
+
+.btn-secondaire {
+  border: 1px solid var(--beige-bord);
+  color: var(--gris);
+  text-decoration: none;
+  font-size: 0.85rem;
+  padding: 12px 24px;
+  letter-spacing: 0.06em;
+  transition: color 0.2s, border-color 0.2s;
+}
+
+.btn-secondaire:hover {
+  color: var(--terre);
+  border-color: var(--terre);
+}
