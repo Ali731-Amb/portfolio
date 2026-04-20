@@ -271,7 +271,8 @@ nav ul a:hover {
 
 #contact {
   padding: 100px 60px;
-  background-color: var(--creme);
+  background-color: var(--creme-fonce);
+  text-align: center;
 }
 
 #contact h2 {
@@ -288,21 +289,25 @@ nav ul a:hover {
   margin-bottom: 48px;
 }
 
-.contact-liens {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  max-width: 520px;
+.contact-grille {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  max-width: 700px;
+  /* centre la grille dans la section */
+  margin: 0 auto;
 }
 
 .contact-carte {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px 24px;
+  background-color: var(--creme);
   border: 1px solid var(--beige-bord);
   border-radius: 4px;
+  padding: 28px 16px;
   text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
   transition: border-color 0.2s, background-color 0.2s;
 }
 
@@ -311,13 +316,27 @@ nav ul a:hover {
   background-color: var(--terre-clair);
 }
 
+.contact-icone {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: var(--terre-clair);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 15px;
+  margin-bottom: 4px;
+}
+
 .contact-label {
-  font-size: 0.75rem;
+  font-size: 0.72rem;
   letter-spacing: 0.12em;
   color: var(--brun);
 }
 
 .contact-valeur {
-  font-size: 0.88rem;
+  font-size: 0.82rem;
   color: var(--noir);
+  text-align: center;
+  line-height: 1.4;
 }
