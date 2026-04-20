@@ -190,14 +190,28 @@ nav ul a:hover {
 /* ---- SECTION PROJETS ---- */
 
 #projets {
+  background-color: var(--noir);
   padding: 100px 60px;
-  background-color: var(--creme-fonce);
+  position: relative;
+  overflow: hidden;
 }
 
-.section-label {
-  display: block;
-  font-size: 0.72rem;
-  letter-spacing: 0.2em;
+/* texte fantôme en arrière-plan */
+#projets::before {
+  content: 'PROJETS';
+  position: absolute;
+  bottom: -20px;
+  left: -10px;
+  font-family: var(--serif);
+  font-size: 160px;
+  font-weight: 700;
+  color: rgba(255,255,255,.03);
+  pointer-events: none;
+  line-height: 1;
+}
+
+/* le label "Projets — 04" en haut */
+#projets .section-label {
   color: var(--terre);
   margin-bottom: 12px;
 }
@@ -205,76 +219,73 @@ nav ul a:hover {
 #projets h2 {
   font-family: var(--serif);
   font-size: 2.4rem;
-  color: var(--noir);
+  color: var(--creme);
+  font-weight: 400;
   margin-bottom: 48px;
 }
 
-.projets-grille {
+.projets-liste {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.projet-row {
   display: grid;
-  /* 2 colonnes égales, s'adaptent à la largeur */
-  grid-template-columns: repeat(2, 1fr);
+  /* numéro | titre | tags */
+  grid-template-columns: 40px 1fr auto;
+  align-items: center;
   gap: 20px;
+  padding: 20px 0;
+  border-bottom: 1px solid rgba(255,255,255,.06);
+  transition: background-color 0.2s;
+  cursor: default;
 }
 
-.projet-carte {
-  background-color: var(--creme);
-  border: 1px solid var(--beige-bord);
-  padding: 28px;
-  border-radius: 4px;
-  /* position relative nécessaire pour le badge "En cours" */
-  position: relative;
-  transition: border-color 0.2s;
+.projet-row:first-child {
+  border-top: 1px solid rgba(255,255,255,.06);
 }
 
-.projet-carte:hover {
-  border-color: var(--terre);
+.projet-row:hover {
+  background-color: rgba(255,255,255,.02);
+  padding-left: 12px;
 }
 
 .projet-num {
   font-size: 0.72rem;
-  color: var(--brun);
+  color: rgba(255,255,255,.2);
   letter-spacing: 0.1em;
-  display: block;
-  margin-bottom: 12px;
 }
 
-.projet-carte h3 {
+.projet-titre {
   font-family: var(--serif);
-  font-size: 1.2rem;
-  color: var(--noir);
-  margin-bottom: 10px;
+  font-size: 1.4rem;
+  color: var(--creme);
+  transition: color 0.2s;
 }
 
-.projet-carte p {
-  font-size: 0.88rem;
-  color: var(--gris);
-  line-height: 1.7;
-  margin-bottom: 16px;
-}
-
-.projet-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
-}
-
-.projet-tags span {
-  font-size: 0.72rem;
-  padding: 3px 10px;
-  border: 1px solid var(--beige-bord);
-  color: var(--brun);
-  border-radius: 20px;
-}
-
-.badge-wip {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  font-size: 0.68rem;
-  background-color: var(--terre-clair);
+.projet-row:hover .projet-titre {
   color: var(--terre);
+}
+
+.projet-stack {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.projet-tag {
+  font-size: 0.7rem;
   padding: 3px 10px;
-  border-radius: 20px;
+  border: 1px solid rgba(255,255,255,.12);
+  color: rgba(255,255,255,.4);
+}
+
+.projet-tag.wip {
+  border-color: var(--terre);
+  color: var(--terre);
+  background: transparent;
 }
 
 /* ---- SECTION CONTACT ---- */
