@@ -1,0 +1,26 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --creme:        #FBF7F4;
+  --creme-fonce:  #F5EFE9;
+  --beige-bord:   #EDE6DF;
+  --terre:        #C4826A;
+  --terre-clair:  #F2E4DC;
+  --brun:         #A08880;
+  --noir:         #2D2420;
+  --texte:        #4A3C38;
+  --gris:         #A08880;
+
+  --serif: 'Playfair Display', Georgia, serif;
+  --sans:  'DM Sans', sans-serif;
+}
+
+body {
+  background-color: var(--creme);
+  color: var(--texte);
+  font-family: var(--sans);
+}
