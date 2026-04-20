@@ -317,15 +317,19 @@ nav ul a:hover {
 }
 
 .contact-icone {
-  width: 36px;
-  height: 36px;
+  width: 38px;
+  height: 38px;
   border-radius: 50%;
-  background-color: var(--terre-clair);
+  background-color: var(--terre);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 15px;
   margin-bottom: 4px;
+}
+
+.contact-icone svg {
+  width: 16px;
+  height: 16px;
 }
 
 .contact-label {
