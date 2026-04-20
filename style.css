@@ -222,7 +222,6 @@ nav ul a:hover {
   line-height: 1;
 }
 
-/* le label "Projets — 04" en haut */
 #projets .section-label {
   color: var(--terre);
   margin-bottom: 12px;
@@ -269,11 +268,31 @@ nav ul a:hover {
   letter-spacing: 0.1em;
 }
 
+.projet-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
 .projet-titre {
   font-family: var(--serif);
   font-size: 1.4rem;
   color: var(--creme);
   transition: color 0.2s;
+}
+
+.projet-desc {
+  font-size: 0.78rem;
+  color: rgba(255,255,255,.3);
+  line-height: 1.5;
+}
+
+.projet-row:hover .projet-titre {
+  color: var(--terre);
+}
+
+.projet-row:hover .projet-desc {
+  color: rgba(255,255,255,.5);
 }
 
 .projet-row:hover .projet-titre {
