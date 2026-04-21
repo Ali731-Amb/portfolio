@@ -8,23 +8,25 @@
 }
 
 /* ===========================
-   VARIABLES
+   VARIABLES — Palette Ambre & Bois
 =========================== */
 :root {
-  --creme:       #FBF7F4;
-  --creme-fonce: #F5EFE9;
-  --beige-bord:  #EDE6DF;
-  --terre:       #C4826A;
-  --terre-clair: #F2E4DC;
-  --brun:        #A08880;
-  --noir:        #2D2420;
-  --texte:       #4A3C38;
-  --gris:        #7A6A64;
+  --creme:        #FDFAF7;
+  --creme-fonce:  #F0EAE2;
+  --beige-bord:   #E0D8CE;
+  --terre:        #D4956A;
+  --terre-clair:  #F5E8DA;
+  --brun:         #8C6A5A;
+  --gris:         #5C4A3A;
+  --noir:         #2A1F1A;
+  --texte:        #3D2E26;
 
-  --serif: 'Playfair Display', Georgia, serif;
+  --serif: 'Cormorant Garamond', Georgia, serif;
   --sans:  'DM Sans', sans-serif;
 
   --max-width: 860px;
+  --radius: 12px;
+  --shadow: 0 4px 16px rgba(42, 31, 26, 0.07);
 }
 
 /* ===========================
@@ -37,7 +39,6 @@ body {
   line-height: 1.7;
 }
 
-/* conteneur centré pour toutes les sections */
 .conteneur {
   max-width: var(--max-width);
   margin: 0 auto;
@@ -56,15 +57,17 @@ nav {
   justify-content: space-between;
   align-items: center;
   padding: 18px 40px;
-  background-color: var(--creme);
+  background-color: rgba(253, 250, 247, 0.95);
+  backdrop-filter: blur(8px);
   border-bottom: 1px solid var(--beige-bord);
   z-index: 100;
 }
 
 nav .nav-logo {
   font-family: var(--serif);
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   color: var(--noir);
+  letter-spacing: 0.02em;
 }
 
 nav ul {
@@ -90,7 +93,7 @@ nav ul a.active {
    HERO
 =========================== */
 #hero {
-  padding: 140px 0 80px;
+  padding: 140px 0 100px;
   background-color: var(--creme);
 }
 
@@ -101,41 +104,43 @@ nav ul a.active {
   color: var(--terre);
   border-left: 2px solid var(--terre);
   padding-left: 10px;
-  margin-bottom: 24px;
+  margin-bottom: 28px;
 }
 
 #hero h1 {
   font-family: var(--serif);
-  font-size: 5rem;
+  font-size: 5.5rem;
   color: var(--noir);
   font-weight: 400;
-  line-height: 1.05;
-  margin-bottom: 20px;
+  line-height: 1.0;
+  margin-bottom: 24px;
 }
 
 #hero h1 em {
   display: block;
   font-style: italic;
   color: var(--terre);
-  font-size: 5.5rem;
+  font-size: 6rem;
 }
 
 .hero-citation {
   font-family: var(--serif);
   font-style: italic;
-  font-size: 0.95rem;
+  font-size: 1.1rem;
   color: var(--brun);
   border-left: 2px solid var(--terre-clair);
   padding-left: 14px;
   margin-bottom: 20px;
   max-width: 500px;
+  line-height: 1.6;
 }
 
 .hero-desc {
   font-size: 1rem;
   color: var(--gris);
   max-width: 500px;
-  margin-bottom: 32px;
+  margin-bottom: 36px;
+  line-height: 1.8;
 }
 
 .hero-btns {
@@ -148,7 +153,8 @@ nav ul a.active {
   color: var(--creme);
   text-decoration: none;
   font-size: 0.85rem;
-  padding: 12px 24px;
+  padding: 13px 28px;
+  border-radius: 8px;
   letter-spacing: 0.06em;
   transition: background-color 0.2s;
 }
@@ -162,7 +168,8 @@ nav ul a.active {
   color: var(--gris);
   text-decoration: none;
   font-size: 0.85rem;
-  padding: 12px 24px;
+  padding: 13px 28px;
+  border-radius: 8px;
   letter-spacing: 0.06em;
   transition: color 0.2s, border-color 0.2s;
 }
@@ -173,19 +180,15 @@ nav ul a.active {
 }
 
 /* ===========================
-   À PROPOS
+   SECTION LABELS & TITRES
 =========================== */
-#apropos {
-  padding: 80px 0;
-  background-color: var(--creme-fonce);
-}
-
 .section-label {
   display: block;
   font-size: 0.72rem;
   letter-spacing: 0.2em;
   color: var(--terre);
   margin-bottom: 10px;
+  font-family: var(--sans);
 }
 
 #apropos h2,
@@ -194,35 +197,74 @@ nav ul a.active {
 #certifications h2,
 #contact h2 {
   font-family: var(--serif);
-  font-size: 2rem;
+  font-size: 2.4rem;
   color: var(--noir);
   font-weight: 400;
   margin-bottom: 40px;
+  line-height: 1.2;
 }
 
+/* ===========================
+   FONDUS ENTRE SECTIONS
+=========================== */
+#hero         { background: var(--creme) }
+#apropos      { background: linear-gradient(to bottom, var(--creme), var(--creme-fonce)) }
+#alternance   { background: linear-gradient(to bottom, var(--creme-fonce), var(--creme)) }
+#projets      { background: linear-gradient(to bottom, var(--creme), var(--noir)) }
+#certifications { background: linear-gradient(to bottom, var(--noir), var(--creme-fonce)) }
+#contact      { background: linear-gradient(to bottom, var(--creme-fonce), var(--creme)) }
+
+/* padding commun à toutes les sections */
+#apropos, #alternance, #certifications, #contact {
+  padding: 90px 0;
+}
+
+#projets {
+  padding: 90px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+#projets::before {
+  content: 'PROJETS';
+  position: absolute;
+  bottom: -20px;
+  left: -10px;
+  font-family: var(--serif);
+  font-size: 160px;
+  font-weight: 700;
+  color: rgba(255,255,255,.03);
+  pointer-events: none;
+  line-height: 1;
+}
+
+/* ===========================
+   À PROPOS
+=========================== */
 .apropos-grille {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 32px;
+  gap: 20px;
 }
 
 .apropos-bloc {
   background-color: var(--creme);
   border: 1px solid var(--beige-bord);
-  border-radius: 4px;
+  border-radius: var(--radius);
   padding: 28px;
+  box-shadow: var(--shadow);
 }
 
 .apropos-bloc h3 {
   font-family: var(--serif);
-  font-size: 1.1rem;
+  font-size: 1.3rem;
   color: var(--noir);
   margin-bottom: 12px;
-  font-weight: 400;
+  font-weight: 600;
 }
 
 .apropos-bloc p {
-  font-size: 0.88rem;
+  font-size: 0.9rem;
   color: var(--gris);
   line-height: 1.8;
 }
@@ -231,13 +273,13 @@ nav ul a.active {
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 10px;
 }
 
 .apropos-liste li {
   font-size: 0.88rem;
   color: var(--gris);
-  padding-left: 16px;
+  padding-left: 14px;
   border-left: 2px solid var(--terre-clair);
   line-height: 1.6;
 }
@@ -250,26 +292,24 @@ nav ul a.active {
 
 .competence-tag {
   font-size: 0.75rem;
-  padding: 4px 12px;
+  padding: 5px 14px;
   border: 1px solid var(--beige-bord);
   color: var(--brun);
   border-radius: 20px;
+  background-color: var(--creme);
 }
 
 /* ===========================
    ALTERNANCE
 =========================== */
-#alternance {
-  padding: 80px 0;
-  background-color: var(--creme);
-}
-
 .alternance-intro {
-  font-size: 1rem;
+  font-family: var(--serif);
+  font-size: 1.15rem;
   color: var(--gris);
   margin-top: -24px;
-  margin-bottom: 40px;
+  margin-bottom: 48px;
   font-style: italic;
+  line-height: 1.7;
 }
 
 .alternance-grille {
@@ -278,11 +318,19 @@ nav ul a.active {
   gap: 40px;
 }
 
+.alternance-col {
+  background-color: var(--creme);
+  border: 1px solid var(--beige-bord);
+  border-radius: var(--radius);
+  padding: 32px;
+  box-shadow: var(--shadow);
+}
+
 .alternance-col h3 {
   font-family: var(--serif);
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   color: var(--noir);
-  font-weight: 400;
+  font-weight: 600;
   margin-bottom: 24px;
   padding-bottom: 12px;
   border-bottom: 1px solid var(--beige-bord);
@@ -303,23 +351,23 @@ nav ul a.active {
 
 .liste-num {
   font-family: var(--serif);
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   color: var(--terre-clair);
-  font-weight: 700;
+  font-weight: 600;
   flex-shrink: 0;
   margin-top: 2px;
 }
 
 .alternance-liste strong {
   display: block;
-  font-size: 0.88rem;
+  font-size: 0.9rem;
   color: var(--noir);
   margin-bottom: 4px;
   font-weight: 500;
 }
 
 .alternance-liste p {
-  font-size: 0.82rem;
+  font-size: 0.84rem;
   color: var(--gris);
   line-height: 1.7;
 }
@@ -327,32 +375,12 @@ nav ul a.active {
 /* ===========================
    PROJETS
 =========================== */
-#projets {
-  background-color: var(--noir);
-  padding: 80px 0;
-  position: relative;
-  overflow: hidden;
-}
-
-#projets::before {
-  content: 'PROJETS';
-  position: absolute;
-  bottom: -20px;
-  left: -10px;
-  font-family: var(--serif);
-  font-size: 160px;
-  font-weight: 700;
-  color: rgba(255,255,255,.03);
-  pointer-events: none;
-  line-height: 1;
-}
-
 #projets .section-label {
   color: var(--terre);
 }
 
 #projets h2 {
-  color: var(--creme);
+  color: #F5F0ED;
 }
 
 .projets-liste {
@@ -365,38 +393,40 @@ nav ul a.active {
   grid-template-columns: 40px 1fr auto;
   align-items: center;
   gap: 20px;
-  padding: 20px 0;
-  border-bottom: 1px solid rgba(255,255,255,.06);
+  padding: 22px 16px;
+  border-bottom: 1px solid rgba(255,255,255,.07);
   text-decoration: none;
+  border-radius: 8px;
   transition: background-color 0.2s, padding-left 0.2s;
   cursor: pointer;
 }
 
 .projet-row:first-child {
-  border-top: 1px solid rgba(255,255,255,.06);
+  border-top: 1px solid rgba(255,255,255,.07);
 }
 
 .projet-row:hover {
-  background-color: rgba(255,255,255,.02);
-  padding-left: 12px;
+  background-color: rgba(255,255,255,.04);
+  padding-left: 24px;
 }
 
 .projet-num {
   font-size: 0.72rem;
-  color: rgba(255,255,255,.2);
+  color: #6B5A54;
   letter-spacing: 0.1em;
 }
 
 .projet-info {
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 5px;
 }
 
 .projet-titre {
   font-family: var(--serif);
-  font-size: 1.4rem;
-  color: var(--creme);
+  font-size: 1.5rem;
+  color: #F5F0ED;
+  font-weight: 400;
   transition: color 0.2s;
   display: flex;
   align-items: center;
@@ -408,13 +438,13 @@ nav ul a.active {
 }
 
 .projet-desc {
-  font-size: 0.78rem;
-  color: rgba(255,255,255,.4);
+  font-size: 0.8rem;
+  color: #B0A09A;
   line-height: 1.5;
 }
 
 .projet-row:hover .projet-desc {
-  color: rgba(255,255,255,.6);
+  color: #D4C4BC;
 }
 
 .projet-stack {
@@ -427,18 +457,14 @@ nav ul a.active {
 .projet-tag {
   font-size: 0.7rem;
   padding: 3px 10px;
-  border: 1px solid rgba(255,255,255,.12);
-  color: rgba(255,255,255,.4);
-}
-
-.projet-tag.wip {
-  border-color: var(--terre);
-  color: var(--terre);
+  border: 1px solid #4A3830;
+  color: #C4A99A;
+  border-radius: 20px;
 }
 
 .badge-wip {
   font-size: 0.6rem;
-  padding: 2px 8px;
+  padding: 3px 9px;
   background: transparent;
   border: 1px solid var(--terre);
   color: var(--terre);
@@ -447,35 +473,42 @@ nav ul a.active {
   vertical-align: middle;
 }
 
+.badge-done {
+  font-size: 0.6rem;
+  padding: 3px 9px;
+  background: transparent;
+  border: 1px solid #4A8C6A;
+  color: #4A8C6A;
+  border-radius: 20px;
+  font-family: var(--sans);
+  vertical-align: middle;
+}
+
 /* ===========================
    CERTIFICATIONS
 =========================== */
-#certifications {
-  padding: 80px 0;
-  background-color: var(--creme-fonce);
-}
-
 .certifs-grille {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 16px;
-  margin-bottom: 20px;
 }
 
 .certif-carte {
   background-color: var(--creme);
   border: 1px solid var(--beige-bord);
-  border-radius: 4px;
+  border-radius: var(--radius);
   padding: 20px 24px;
   display: flex;
   align-items: center;
   gap: 16px;
-  transition: border-color 0.2s;
+  box-shadow: var(--shadow);
+  transition: border-color 0.2s, transform 0.2s;
   text-decoration: none;
 }
 
 .certif-carte:hover {
   border-color: var(--terre);
+  transform: translateY(-2px);
 }
 
 .certif-badge {
@@ -488,7 +521,7 @@ nav ul a.active {
   justify-content: center;
   font-size: 0.7rem;
   font-weight: 700;
-  border-radius: 6px;
+  border-radius: 8px;
   flex-shrink: 0;
   letter-spacing: 0.05em;
 }
@@ -500,7 +533,7 @@ nav ul a.active {
 }
 
 .certif-titre {
-  font-size: 0.88rem;
+  font-size: 0.9rem;
   color: var(--noir);
   font-weight: 500;
 }
@@ -510,18 +543,10 @@ nav ul a.active {
   color: var(--gris);
 }
 
-.certifs-note {
-  font-size: 0.78rem;
-  color: var(--brun);
-  font-style: italic;
-}
-
 /* ===========================
    CONTACT
 =========================== */
 #contact {
-  padding: 80px 0;
-  background-color: var(--creme);
   text-align: center;
 }
 
@@ -541,26 +566,27 @@ nav ul a.active {
 }
 
 .contact-carte {
-  background-color: var(--creme-fonce);
+  background-color: var(--creme);
   border: 1px solid var(--beige-bord);
-  border-radius: 4px;
+  border-radius: var(--radius);
   padding: 28px 16px;
   text-decoration: none;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 8px;
-  transition: border-color 0.2s, background-color 0.2s;
+  box-shadow: var(--shadow);
+  transition: border-color 0.2s, transform 0.2s;
 }
 
 .contact-carte:hover {
   border-color: var(--terre);
-  background-color: var(--terre-clair);
+  transform: translateY(-2px);
 }
 
 .contact-icone {
-  width: 38px;
-  height: 38px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
   background-color: var(--terre);
   display: flex;
@@ -585,7 +611,7 @@ nav ul a.active {
 }
 
 .contact-valeur {
-  font-size: 0.82rem;
+  font-size: 0.84rem;
   color: var(--noir);
   text-align: center;
   line-height: 1.4;
@@ -595,7 +621,7 @@ nav ul a.active {
    FOOTER
 =========================== */
 footer {
-  padding: 24px 0;
+  padding: 28px 0;
   border-top: 1px solid var(--beige-bord);
   background-color: var(--creme);
 }
@@ -618,11 +644,11 @@ footer .conteneur {
   }
 
   nav ul {
-    gap: 12px;
+    gap: 10px;
   }
 
   nav ul a {
-    font-size: 0.7rem;
+    font-size: 0.68rem;
   }
 
   #hero {
@@ -630,11 +656,11 @@ footer .conteneur {
   }
 
   #hero h1 {
-    font-size: 3.5rem;
+    font-size: 3.8rem;
   }
 
   #hero h1 em {
-    font-size: 4rem;
+    font-size: 4.2rem;
   }
 
   .apropos-grille,
