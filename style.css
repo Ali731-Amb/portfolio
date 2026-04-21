@@ -111,6 +111,17 @@ nav ul a:hover {
   border-left: 2px solid var(--terre-clair);
   padding-left: 14px;
 }
+.hero-gauche p.hero-citation {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 0.9rem;
+  color: var(--brun);
+  margin-top: 20px;
+  max-width: 340px;
+  line-height: 1.7;
+  border-left: 2px solid var(--terre-clair);
+  padding-left: 14px;
+}
 
 .hero-droite {
   display: flex;
