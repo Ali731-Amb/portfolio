@@ -186,12 +186,12 @@ nav ul a.active {
   line-height: 1.2;
 }
 
-#hero         { background: var(--creme); }
-#apropos      { background: linear-gradient(to bottom, var(--creme), var(--creme-fonce)); }
-#alternance   { background: linear-gradient(to bottom, var(--creme-fonce), var(--creme)); }
-#projets      { background: var(--noir); }
+#hero           { background: var(--creme); }
+#apropos        { background: linear-gradient(to bottom, var(--creme), var(--creme-fonce)); }
+#alternance     { background: linear-gradient(to bottom, var(--creme-fonce), var(--creme)); }
+#projets        { background: var(--noir); }
 #certifications { background: var(--creme-fonce); }
-#contact      { background: linear-gradient(to bottom, var(--creme-fonce), var(--creme)); }
+#contact        { background: linear-gradient(to bottom, var(--creme-fonce), var(--creme)); }
 
 #apropos, #alternance, #certifications, #contact {
   padding: 90px 0;
@@ -203,6 +203,7 @@ nav ul a.active {
   overflow: hidden;
 }
 
+/* texte fantôme en arrière plan */
 #projets::before {
   content: 'PROJETS';
   position: absolute;
@@ -214,33 +215,35 @@ nav ul a.active {
   color: rgba(255,255,255,.03);
   pointer-events: none;
   line-height: 1;
+  z-index: 0;
 }
 
+/* fondu en haut du bloc marron */
 #projets::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 80px;
-  background: linear-gradient(to bottom, transparent, var(--creme-fonce));
-  pointer-events: none;
-}
-
-#certifications {
-  position: relative;
-}
-
-#certifications::before {
   content: '';
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
-  height: 80px;
-  background: linear-gradient(to bottom, var(--noir), transparent);
+  height: 60px;
+  background: linear-gradient(to bottom, var(--creme), transparent);
   pointer-events: none;
-  z-index: 0;
+  z-index: 1;
+}
+
+/* fondu en bas du bloc marron */
+.fade-bottom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  background: linear-gradient(to top, var(--creme-fonce), transparent);
+  pointer-events: none;
+}
+
+#certifications {
+  position: relative;
 }
 
 #certifications > .conteneur {
@@ -387,6 +390,8 @@ nav ul a.active {
 .projets-liste {
   display: flex;
   flex-direction: column;
+  position: relative;
+  z-index: 2;
 }
 
 .projet-row {
