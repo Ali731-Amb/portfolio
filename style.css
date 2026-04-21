@@ -386,3 +386,86 @@ nav ul a:hover {
   color: var(--terre);
   margin-bottom: 12px;
 }
+
+/* ---- RESPONSIVE MOBILE ---- */
+
+@media (max-width: 768px) {
+
+  /* NAVBAR */
+  nav {
+    padding: 16px 24px;
+  }
+
+  nav ul {
+    gap: 16px;
+  }
+
+  nav ul a {
+    font-size: 0.75rem;
+  }
+
+  /* HERO */
+  #hero {
+    /* une seule colonne sur mobile */
+    grid-template-columns: 1fr;
+    padding: 120px 24px 60px;
+    gap: 40px;
+  }
+
+  .hero-gauche h1 {
+    font-size: 3.5rem;
+  }
+
+  .hero-gauche h1 em {
+    font-size: 4rem;
+  }
+
+  .hero-citation {
+    max-width: 100%;
+  }
+
+  .hero-droite p {
+    max-width: 100%;
+  }
+
+  /* PROJETS */
+  #projets {
+    padding: 60px 24px;
+  }
+
+  #projets h2 {
+    font-size: 1.8rem;
+  }
+
+  .projet-row {
+    /* empile numéro+info en colonne, tags en dessous */
+    grid-template-columns: 30px 1fr;
+    grid-template-rows: auto auto;
+    gap: 8px 12px;
+  }
+
+  .projet-stack {
+    /* les tags passent sous le titre */
+    grid-column: 2;
+    justify-content: flex-start;
+  }
+
+  .projet-titre {
+    font-size: 1.1rem;
+  }
+
+  /* CONTACT */
+  #contact {
+    padding: 60px 24px;
+  }
+
+  #contact h2 {
+    font-size: 1.8rem;
+  }
+
+  .contact-grille {
+    /* une colonne sur mobile */
+    grid-template-columns: 1fr;
+    max-width: 100%;
+  }
+}
