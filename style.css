@@ -137,15 +137,15 @@ nav ul a.active {
   word-break: break-word;
 }
 
-.terminal-prompt { color: var(--terre); }
-.terminal-cmd { color: #F5F0ED; }
-.terminal-ok { color: #5CA87A; }
+.terminal-prompt { color: #FF6B9D; }
+.terminal-cmd { color: #FFF4F8; }
+.terminal-ok { color: #FFC542; }
 
 .curseur {
   display: inline-block;
   width: 8px;
   height: 1em;
-  background: var(--terre);
+  background: #FF6B9D;
   vertical-align: text-bottom;
   animation: clignote 1s steps(1) infinite;
 }
@@ -786,8 +786,16 @@ nav ul a.active {
   .hero-grille {
     grid-template-columns: 1fr;
     gap: 32px;
-  }
   .hero-terminal {
-    max-width: 380px;
+  background: var(--noir);
+  border: 1px solid #3A2A22;
+  border-radius: 12px;
+  box-shadow: 0 18px 40px rgba(42, 31, 26, 0.18);
+  overflow: hidden;
+  font-family: ui-monospace, SFMono-Regular, Menlo, 'Courier New', monospace;
+  margin-top: 24px;
+  transform: translateX(20px);
+}
   }
 }
+
