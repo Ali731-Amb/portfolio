@@ -3,7 +3,7 @@
 // ============================================
 
 const elementsAnimes = document.querySelectorAll(
-	'.projet-row, .contact-carte'
+	'.projet-row, .contact-carte, .apropos-citation, .apropos-bloc'
 );
 
 // état invisible au départ
@@ -49,6 +49,7 @@ const observateurNav = new IntersectionObserver((entries) => {
 }, { threshold: 0.4 });
 
 sections.forEach(section => observateurNav.observe(section));
+
 
 // ============================================
 // 3 — TERMINAL ANIMÉ (HERO)
