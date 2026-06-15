@@ -819,7 +819,7 @@ nav ul a.active {
   overflow: hidden;
   font-family: ui-monospace, SFMono-Regular, Menlo, 'Courier New', monospace;
   margin-top: 24px;
-  transform: translateX(20px);
+  transform: translateX(40px);
 }
   }
 }
