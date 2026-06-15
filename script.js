@@ -49,3 +49,78 @@ const observateurNav = new IntersectionObserver((entries) => {
 }, { threshold: 0.4 });
 
 sections.forEach(section => observateurNav.observe(section));
+
+// ============================================
+// 3 — TERMINAL ANIMÉ (HERO)
+// ============================================
+
+const terminalCorps = document.getElementById('terminal-corps');
+
+if (terminalCorps) {
+  const prompt = 'alison:~$ ';
+  const sequence = [
+    { type: 'cmd',    texte: 'whoami' },
+    { type: 'sortie', texte: 'alison_amblard' },
+    { type: 'vide' },
+    { type: 'cmd',    texte: 'cat parcours.txt' },
+    { type: 'sortie', texte: 'cuisine → dev web → cybersécurité' },
+    { type: 'vide' },
+    { type: 'cmd',    texte: './objectif.sh' },
+    { type: 'ok',     texte: '[OK] alternance cyber · sept. 2026' },
+  ];
+
+  const pause = (ms) => new Promise(r => setTimeout(r, ms));
+  const reduit = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  async function taperLigne(item) {
+    const ligne = document.createElement('div');
+    ligne.className = 'terminal-ligne';
+    terminalCorps.appendChild(ligne);
+
+    if (item.type === 'vide') {
+      ligne.innerHTML = '&nbsp;';
+      return;
+    }
+
+    if (item.type === 'cmd') {
+      const p = document.createElement('span');
+      p.className = 'terminal-prompt';
+      p.textContent = prompt;
+      ligne.appendChild(p);
+    }
+
+    const span = document.createElement('span');
+    if (item.type === 'cmd') span.className = 'terminal-cmd';
+    if (item.type === 'ok')  span.className = 'terminal-ok';
+    ligne.appendChild(span);
+
+    if (reduit) {
+      span.textContent = item.texte;
+      return;
+    }
+
+    for (const c of item.texte) {
+      span.textContent += c;
+      await pause(38);
+    }
+  }
+
+  async function lancer() {
+    for (const item of sequence) {
+      await taperLigne(item);
+      await pause(reduit ? 0 : 300);
+    }
+    const finale = document.createElement('div');
+    finale.className = 'terminal-ligne';
+    const p = document.createElement('span');
+    p.className = 'terminal-prompt';
+    p.textContent = prompt;
+    const cur = document.createElement('span');
+    cur.className = 'curseur';
+    finale.appendChild(p);
+    finale.appendChild(cur);
+    terminalCorps.appendChild(finale);
+  }
+
+  lancer();
+}

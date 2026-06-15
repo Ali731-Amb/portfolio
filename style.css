@@ -781,3 +781,13 @@ nav ul a.active {
   color: var(--terre);
   margin-bottom: 8px;
 }
+
+@media (max-width: 768px) {
+  .hero-grille {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  .hero-terminal {
+    max-width: 380px;
+  }
+}
