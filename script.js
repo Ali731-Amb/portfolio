@@ -3,7 +3,7 @@
 // ============================================
 
 const elementsAnimes = document.querySelectorAll(
-	'.projet-row, .contact-carte, .apropos-citation, .apropos-bloc'
+	'.projet-row, .contact-carte, .apropos-citation, .apropos-bloc, .traj-etape'
 );
 
 // état invisible au départ

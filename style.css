@@ -478,74 +478,94 @@ nav ul a.active {
   background-color: var(--creme);
 }
 
-.alternance-intro {
+.alternance-manifeste {
   font-family: var(--serif);
-  font-size: 1.15rem;
-  color: var(--gris);
+  font-size: 1.6rem;
+  color: var(--noir);
+  line-height: 1.4;
   margin-top: -24px;
-  margin-bottom: 48px;
-  font-style: italic;
-  line-height: 1.7;
+  margin-bottom: 40px;
 }
 
-.alternance-grille {
+.alternance-manifeste span {
+  color: var(--terre);
+}
+
+.trajectoire {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 40px;
-}
-
-.alternance-col {
-  background-color: var(--creme-fonce);
-  border: 1px solid var(--beige-bord);
-  border-radius: var(--radius);
-  padding: 32px;
-  box-shadow: var(--shadow);
-}
-
-.alternance-col h3 {
-  font-family: var(--serif);
-  font-size: 1.2rem;
-  color: var(--noir);
-  font-weight: 600;
-  margin-bottom: 24px;
-  padding-bottom: 12px;
-  border-bottom: 1px solid var(--beige-bord);
-}
-
-.alternance-liste {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-}
-
-.alternance-liste li {
-  display: flex;
+  grid-template-columns: 1fr 1fr 1fr;
   gap: 16px;
-  align-items: flex-start;
 }
 
-.liste-num {
+.traj-etape {
+  background-color: var(--creme);
+  border: 1px solid var(--beige-bord);
+  border-radius: 14px;
+  padding: 26px;
+  box-shadow: 0 8px 22px rgba(42, 31, 26, 0.07);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.traj-etape:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(42, 31, 26, 0.1);
+}
+
+.traj-etape-sombre {
+  background-color: var(--noir);
+  border-color: #3A2A22;
+  box-shadow: 0 10px 26px rgba(42, 31, 26, 0.15);
+}
+
+.traj-tete {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+
+.traj-point {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.traj-point-clair { background: #E8C4B0; }
+.traj-point-terre { background: var(--terre); }
+.traj-point-rose  { background: #FF6B9D; }
+
+.traj-periode {
+  font-size: 0.66rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--brun);
+}
+
+.traj-periode-terre {
+  color: var(--terre);
+}
+
+.traj-etape h4 {
   font-family: var(--serif);
   font-size: 1.2rem;
-  color: var(--terre-clair);
-  font-weight: 600;
-  flex-shrink: 0;
-  margin-top: 2px;
-}
-
-.alternance-liste strong {
-  display: block;
-  font-size: 0.9rem;
   color: var(--noir);
-  margin-bottom: 4px;
-  font-weight: 500;
+  margin-bottom: 10px;
+  font-weight: 600;
 }
 
-.alternance-liste p {
-  font-size: 0.84rem;
+.traj-etape p {
+  font-size: 0.8rem;
   color: var(--gris);
   line-height: 1.7;
+}
+
+.traj-etape-sombre h4 {
+  color: #F5F0ED;
+}
+
+.traj-etape-sombre p {
+  color: #D4C4BC;
 }
 
 #projets .section-label {
@@ -861,6 +881,14 @@ footer .conteneur {
 
   .apropos-asym {
     grid-template-columns: 1fr;
+  }
+
+  .trajectoire {
+    grid-template-columns: 1fr;
+  }
+
+  .alternance-manifeste {
+    font-size: 1.35rem;
   }
 
   .alternance-grille,
