@@ -657,62 +657,46 @@ nav ul a.active {
   line-height: 1.8;
 }
 
-.contact-grille {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 16px;
-  max-width: 700px;
-  margin: 0 auto;
-}
-
 .contact-carte {
-  background-color: var(--creme-fonce);
-  border: 1px solid var(--beige-bord);
+  background-color: var(--noir);
+  border: 1px solid rgba(196, 130, 106, 0.35);
   border-radius: var(--radius);
   padding: 28px 16px;
   text-decoration: none;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 8px;
-  box-shadow: var(--shadow);
-  transition: border-color 0.2s, transform 0.2s;
+  gap: 12px;
+  transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
 }
 
 .contact-carte:hover {
   border-color: var(--terre);
-  transform: translateY(-2px);
+  box-shadow: 0 0 0 1px var(--terre), 0 8px 20px rgba(196, 130, 106, 0.15);
+  transform: translateY(-3px);
 }
 
 .contact-icone {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background-color: var(--terre);
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 4px;
-  flex-shrink: 0;
 }
 
 .contact-icone svg {
-  width: 16px;
-  height: 16px;
-  stroke: #ffffff !important;
-  fill: none !important;
+  width: 24px;
+  height: 24px;
   display: block;
 }
 
 .contact-label {
-  font-size: 0.72rem;
+  font-size: 0.7rem;
   letter-spacing: 0.12em;
-  color: var(--brun);
+  color: var(--terre);
 }
 
 .contact-valeur {
-  font-size: 0.84rem;
-  color: var(--noir);
+  font-size: 0.78rem;
+  color: #D4C4BC;
   text-align: center;
   line-height: 1.4;
 }
