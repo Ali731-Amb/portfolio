@@ -152,7 +152,7 @@ nav ul a.active {
 
 .terminal-prompt { color: #FF6B9D; }
 .terminal-cmd { color: #FFC542; }
-.terminal-ok { color: #FFC542; }
+.terminal-ok { color: #99e56a; }
 
 .curseur {
   display: inline-block;
