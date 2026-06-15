@@ -692,3 +692,20 @@ footer .conteneur {
 nav ul a.active {
   color: var(--terre);
 }
+
+.competences-groupe {
+  margin-bottom: 16px;
+}
+
+.competences-groupe:last-child {
+  margin-bottom: 0;
+}
+
+.competences-cat {
+  display: block;
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--terre);
+  margin-bottom: 8px;
+}
