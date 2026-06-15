@@ -95,6 +95,7 @@ nav ul a.active {
 .hero-dispo {
   display: flex;
   width: fit-content;
+  margin-left: auto;
   align-items: center;
   gap: 8px;
   font-size: 0.72rem;
