@@ -679,60 +679,114 @@ nav ul a.active {
   vertical-align: middle;
 }
 
-.certifs-grille {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 16px;
-}
-
-.certif-carte {
-  background-color: var(--creme);
-  border: 1px solid var(--beige-bord);
-  border-radius: var(--radius);
-  padding: 20px 24px;
-  display: flex;
+.projet-lien {
+  display: inline-flex;
   align-items: center;
-  gap: 16px;
-  box-shadow: var(--shadow);
-  transition: border-color 0.2s, transform 0.2s;
-  text-decoration: none;
-}
-
-.certif-carte:hover {
-  border-color: var(--terre);
-  transform: translateY(-2px);
-}
-
-.certif-badge {
-  width: 44px;
-  height: 44px;
-  background-color: #1F70C1;
-  color: #fff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  gap: 5px;
   font-size: 0.7rem;
-  font-weight: 700;
-  border-radius: 8px;
+  color: var(--terre);
+  text-decoration: none;
+  margin-top: 8px;
+  transition: gap 0.2s, color 0.2s;
+}
+
+.projet-lien:hover {
+  gap: 9px;
+  color: #E8A088;
+}
+
+.projet-lien svg {
   flex-shrink: 0;
-  letter-spacing: 0.05em;
 }
 
-.certif-info {
+.projet-confidentiel {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.7rem;
+  color: #6B5A54;
+  margin-top: 8px;
+}
+
+.projet-confidentiel svg {
+  flex-shrink: 0;
+}
+
+.certif-avant {
+  background: linear-gradient(135deg, var(--creme), #FBF6F0);
+  border: 1.5px solid var(--terre);
+  border-radius: 14px;
+  padding: 28px;
+  margin-bottom: 18px;
+  box-shadow: 0 10px 28px rgba(196, 130, 106, 0.15);
+}
+
+.certif-avant-tete {
   display: flex;
-  flex-direction: column;
-  gap: 4px;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  gap: 12px;
 }
 
-.certif-titre {
-  font-size: 0.9rem;
+.certif-avant-label {
+  font-size: 0.66rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--terre);
+}
+
+.certif-avant h3 {
+  font-family: var(--serif);
+  font-size: 1.5rem;
   color: var(--noir);
-  font-weight: 500;
+  margin-bottom: 6px;
+  font-weight: 600;
 }
 
-.certif-org {
-  font-size: 0.75rem;
+.certif-avant p {
+  font-size: 0.84rem;
   color: var(--gris);
+  line-height: 1.6;
+}
+
+.certif-continue {
+  background: var(--creme-fonce);
+  border: 1px solid var(--beige-bord);
+  border-radius: 12px;
+  padding: 20px 24px;
+}
+
+.certif-continue-label {
+  display: block;
+  font-size: 0.66rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--brun);
+  margin-bottom: 12px;
+}
+
+.certif-continue-liste {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.certif-puce {
+  font-size: 0.74rem;
+  padding: 6px 14px;
+  background: var(--creme);
+  border: 1px solid var(--beige-bord);
+  border-radius: 20px;
+  color: var(--gris);
+  text-decoration: none;
+  transition: border-color 0.2s, color 0.2s, transform 0.2s;
+}
+
+.certif-puce:hover {
+  border-color: var(--terre);
+  color: var(--terre);
+  transform: translateY(-2px);
 }
 
 #contact {
@@ -889,11 +943,6 @@ footer .conteneur {
 
   .alternance-manifeste {
     font-size: 1.35rem;
-  }
-
-  .alternance-grille,
-  .certifs-grille {
-    grid-template-columns: 1fr;
   }
 
   .projet-row {
